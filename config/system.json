@@ -1,0 +1,37 @@
+{
+    "disableMultiFrameVideoAutoLoad": false,
+    "threeDimensionServiceIntegration": {
+        "serverIP": null,
+        "port": null,
+        "protocol": null,
+        "pathPrefix": null,
+        "pathPrefixReplaceTo": null
+    },
+    "features": {
+        "patientHistory": false,
+        "keyObjectAndPresentationStateQuickSave": true,
+        "keyObjects": true,
+        "presentationState": true,
+        "searchSettings": true,
+        "viewerSettings": true,
+        "reportSettings": true,
+        "hangingProtocolsSettings": true,
+        "export": true,
+        "archive": true,
+        "search": true
+    },
+    "blackListedSopClasses": [],
+        "forwardPacs": [{
+            "storeScpIp": "127.0.0.1",
+            "storeScpPort": "104",
+            "storeScpAet": "PACS",
+            "description": "An example destination for Forward"
+        }],
+    "languages": ["en"],
+    "dicomLibraryConfiguration": {
+        "dicomLibrarySender": null,
+        "dicomLibrarySubject": null
+    },
+    "asynchronousStudyLoading": false,
+    "formatIntegrationLinkInViewer": false
+}
