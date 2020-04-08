@@ -6,6 +6,8 @@ docker run --restart=always --network=orthanc --name meddream -itd -p 8081:80 -e
   -v $PWD/config/meddream.lic:/opt/meddream/license/meddream.lic:ro \
   meddream/orthanc-dicom-viewer
 docker run --restart=always --network=orthanc --name meddream-token-service -itd -p 8088 meddream/token-service
-docker run --restart=always --network=orthanc -d -p 8080:80 --name his meddream/dicom-viewer-integration
+docker run --restart=always --network=orthanc -d -p 8080:80 --name his \
+  -v $PWD/config/getToken.php:/var/www/html/getToken.php:ro \
+  meddream/dicom-viewer-integration
 docker run --rm --network=orthanc dcm4che/dcm4che-tools:5.16.3 storescu -cDCM4CHEE@orthanc:4242 /opt/dcm4che/etc/testdata/dicom
 
