@@ -5,7 +5,9 @@ docker run --restart=always --network=orthanc --name meddream -itd -p 8081:80 -e
   -v $PWD/config/system.json:/opt/meddream/sys/settings/system.json:ro \
   -v $PWD/config/meddream.lic:/opt/meddream/license/meddream.lic:ro \
   meddream/orthanc-dicom-viewer
-docker run --restart=always --network=orthanc --name meddream-token-service -itd -p 8088 meddream/token-service
+docker run --restart=always --network=orthanc --name meddream-token-service -itd -p 8088 \
+  -v $PWD/config/token.application.properties:/opt/token/application.properties:ro \
+  meddream/token-service
 docker run --restart=always --network=orthanc -d -p 8080:80 --name his \
   -v $PWD/config/getToken.php:/var/www/html/getToken.php:ro \
   meddream/dicom-viewer-integration
