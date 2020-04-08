@@ -1,5 +1,8 @@
 <?php
 
+echo $_SERVER['REMOTE_ADDR'];
+echo "\n";
+
 if (!isset($_GET["study"])) exit;
 // Example: http://192.168.1.121:8080/getToken.php?study=1.113654.3.13.1026
 
