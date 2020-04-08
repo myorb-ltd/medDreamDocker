@@ -1,4 +1,4 @@
-docker network create orthanc;
+# docker network create orthanc;
 docker run --restart=always --network=orthanc --name orthanc -itd -p 4242:4242 -p 8042:8042 jodogne/orthanc:1.5.8
 docker run --restart=always --network=orthanc --name meddream -itd -p 8081:80 -e integration=token \
   -v $PWD/config/application.properties:/opt/meddream/application.properties:ro \
